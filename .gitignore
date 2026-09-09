@@ -5,9 +5,12 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+/.features-gen/
 reports/
 .playwright-mcp/
 
 # Ambiente
 .env
 *.log
+# Playwright CLI output (may contain credentials)
+.playwright-cli/

@@ -19,6 +19,7 @@ Esta Skill cobre exclusivamente o **planejamento** de testes: identificar a cobe
 - Quando o requisito enumerar o conjunto completo de opções de um campo de escolha (combo/select, lista, rádio, checkbox), tratar como dois comportamentos distintos, não redundantes entre si: a composição exata do conjunto de opções disponíveis, e a seleção funcional de cada opção não padrão. Testar a seleção de uma opção não comprova que o conjunto disponível está correto e completo.
 - Considerar casos positivos e negativos quando houver risco ou regra que justifique sua existência.
 - Não inventar requisito, regra, comportamento ou resultado esperado não sustentado pela base de teste. Quando faltar informação, registre a lacuna na coluna "Observação/Pendência" do caso relacionado (ou em "Pendências", quando não for específica a um critério/teste) em vez de supor.
+- Resultado esperado não totalmente claro, mas definível de forma genérica: quando a base de teste evidenciar uma condição real (um limite, um estado, um fluxo) mas não especificar o resultado esperado para ela, não omita o caso — crie-o com um resultado esperado definido de forma genérica (ex.: "o comportamento observado é registrado"), em vez de só apontar a lacuna em "Observação/Pendência". Só registre como pendência (sem criar o caso) quando nem um resultado genérico for sustentável pela base de teste.
 
 ## Base de teste
 
@@ -68,7 +69,7 @@ Selecione somente a(s) técnica(s) pertinente(s) à característica do problema 
 
 ## Critérios de qualidade e rejeição
 
-Um caso é adequado quando possui objetivo específico e delimitado, valida um comportamento real, tem resultado esperado verificável, e está relacionado a um requisito, regra ou risco relevante.
+Um caso é adequado quando possui objetivo específico e delimitado, valida um comportamento real, tem resultado esperado verificável, e está relacionado a um requisito, regra ou risco relevante. Num caso de resultado esperado genérico (ver "Princípios"), "verificável" significa que a observação foi feita e o comportamento real foi registrado — não que um valor específico foi assertado.
 
 **Especificidade**: cada caso deve ter um único objetivo claro e delimitado. Não agrupe objetivos independentes no mesmo caso — por exemplo, "cadastrar, alterar, consultar e excluir cliente" não é um caso, são pelo menos quatro. Prefira casos independentes para cada comportamento verificável; um caso pode ter múltiplas etapas (Dado/E) apenas quando forem necessárias para atingir esse único objetivo.
 
